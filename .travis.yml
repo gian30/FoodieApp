@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode9.2
+gemfile: Gemfile
+
+branches:
+  only:
+    - master
+    - stable
+    - ver1
+
+cache:
+  - cocoapods
