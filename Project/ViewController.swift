@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                                                                 if error == nil {
                                                                     self.goToCreateUserVC()
                                      
-                                                                }
+                                                            }
                                                                 
                                         }
         }
