@@ -26,7 +26,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                         self.goToFeedVC()
                         }
                     }else{
-                        let alertView = UIAlertView(title: "Contraseña incorrecta", message: "La contraseña que has escrito no es correcta. Vuelve a intentarlo.", delegate: self as! UIAlertViewDelegate, cancelButtonTitle: "Volver a intentarlo")
+                        let alertView = UIAlertView(title: "Contraseña incorrecta", message: "La contraseña que has escrito no es correcta. Vuelve a intentarlo.", delegate: self as UIAlertViewDelegate, cancelButtonTitle: "Volver a intentarlo")
                         
                         // Configure Alert View
                         alertView.tag = 1
