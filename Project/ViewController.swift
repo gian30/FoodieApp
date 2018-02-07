@@ -10,33 +10,69 @@ import UIKit
 import Firebase
 import FirebaseAuth
 class ViewController: UIViewController, UIAlertViewDelegate {
-
+    
     @IBAction func registerButton(_ sender: Any) {
-        self.goToCreateUserVC()
+        
+  
+        let alert = UIAlertController(title: "Nuevo Usuario",
+                                      message: "Introduce tus datos por favor",
+                                      preferredStyle: .alert)
+  
+        let cancelAction = UIAlertAction(title: "Cancelar",
+                                         style: .default)
+        let saveAction = UIAlertAction(title: "Guardar",
+                                       style: .default) { action in
+                                        let emailField = alert.textFields![0]
+                                        let passwordField = alert.textFields![1]
+                                        //3.
+                                        Auth.auth().createUser(withEmail: emailField.text!,
+                                                               password: passwordField.text!) { user, error in
+                                                                if error == nil {
+                                                                    self.goToCreateUserVC()
+                                                                }
+                                                                
+                                        }
+        }
+      
+        alert.addTextField { textEmail in
+            textEmail.placeholder = "Email"
+        }
+        alert.addTextField { textPassword in
+            textPassword.isSecureTextEntry = true
+            textPassword.placeholder = "Contraseña"
+        }
+        //6.
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        //7.
+        present(alert, animated: true, completion: nil)
+        
+        
+        
     }
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     var uid: String!
     @IBAction func signInTapped(_ sender: Any) {
         if let email = self.emailField.text, let password = self.passwordField.text {
-                Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                    if error == nil {
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                if error == nil {
                     if let user = user {
                         self.uid = user.uid
                         self.goToFeedVC()
-                        }
-                    }else{
-                        let alertView = UIAlertView(title: "Contraseña incorrecta", message: "La contraseña que has escrito no es correcta. Vuelve a intentarlo.", delegate: self as UIAlertViewDelegate, cancelButtonTitle: "Volver a intentarlo")
-                        
-                        // Configure Alert View
-                        alertView.tag = 1
-                        
-                        // Show Alert View
-                        alertView.show()
                     }
+                }else{
+                    let alertView = UIAlertView(title: "Contraseña incorrecta", message: "La contraseña que has escrito no es correcta. Vuelve a intentarlo.", delegate: self as UIAlertViewDelegate, cancelButtonTitle: "Volver a intentarlo")
+                    
+                    // Configure Alert View
+                    alertView.tag = 1
+                    
+                    // Show Alert View
+                    alertView.show()
                 }
-        
-       
+            }
+            
+            
         }}
     func goToCreateUserVC(){
         performSegue(withIdentifier: "signUp", sender: nil)
@@ -63,12 +99,12 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
