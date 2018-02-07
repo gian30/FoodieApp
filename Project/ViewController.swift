@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                                                                password: passwordField.text!) { user, error in
                                                                 if error == nil {
                                                                     self.goToCreateUserVC()
+                                     
                                                                 }
                                                                 
                                         }
