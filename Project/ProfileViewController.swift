@@ -8,9 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 class ProfileViewController: UIViewController {
 
-    
     @IBAction func buttonLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
 let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
@@ -19,7 +19,6 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

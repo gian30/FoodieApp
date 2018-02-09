@@ -58,7 +58,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="16X-9T-6hp"/>
-                                    <segue destination="tGG-cf-WpA" kind="show" identifier="toFeed" animates="NO" id="Ugh-Ez-DVh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿No tienes una cuenta?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWt-Yw-2C2">
@@ -120,6 +119,7 @@
                         <outlet property="emailField" destination="zVD-vg-UjD" id="oos-3i-Gyd"/>
                         <outlet property="passwordField" destination="f9J-jC-4xz" id="hj9-1M-KHY"/>
                         <segue destination="8h4-aw-pmA" kind="show" identifier="signUp" id="UFu-TQ-jec"/>
+                        <segue destination="tGG-cf-WpA" kind="show" identifier="toFeed" animates="NO" id="cl2-zH-J0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -154,7 +154,6 @@
         <!--Profile-->
         <scene sceneID="Ylh-WX-X9B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l1b-9T-2Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="S1l-ZM-aC2" customClass="ProfileViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YBG-fc-STv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -177,8 +176,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="V3T-2U-r2l"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1b-9T-2Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="-847"/>
+            <point key="canvasLocation" x="1058" y="-934"/>
         </scene>
         <!--Home-->
         <scene sceneID="JSr-da-oL5">

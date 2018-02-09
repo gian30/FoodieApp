@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 class ViewController: UIViewController, UIAlertViewDelegate {
+    var errorLogIn: Bool = false
     
     @IBAction func registerButton(_ sender: Any) {
         
@@ -57,11 +58,13 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         if let email = self.emailField.text, let password = self.passwordField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error == nil {
+                    self.errorLogIn = false
                     if let user = user {
                         self.uid = user.uid
                         self.goToFeedVC()
                     }
                 }else{
+                    
                     let alertView = UIAlertView(title: "Contraseña incorrecta", message: "La contraseña que has escrito no es correcta. Vuelve a intentarlo.", delegate: self as UIAlertViewDelegate, cancelButtonTitle: "Volver a intentarlo")
                     
                     // Configure Alert View
@@ -100,17 +103,11 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        Auth.auth().addStateDidChangeListener { auth, user in
+      Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.uid = user?.uid
                 self.goToFeedVC()
-            } else {
-                // No user is signed in.
             }
         }
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
