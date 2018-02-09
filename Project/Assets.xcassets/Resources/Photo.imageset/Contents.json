@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "user-image-with-black-background.png",
+      "filename" : "icons8-plus_2_math.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-plus_2_math-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-plus_2_math-2.png",
       "scale" : "3x"
     }
   ],

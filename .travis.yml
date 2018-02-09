@@ -6,7 +6,9 @@ branches:
   only:
     - master
     - stable
-    - ver1
-
+    - gianluca
+    - hector
+    - renzo
+    - marcel
 cache:
   - cocoapods

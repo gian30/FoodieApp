@@ -29,8 +29,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                                                                password: passwordField.text!) { user, error in
                                                                 if error == nil {
                                                                     self.goToCreateUserVC()
-                                     
-                                                            }
+                                                                }
                                                                 
                                         }
         }
@@ -96,8 +95,21 @@ class ViewController: UIViewController, UIAlertViewDelegate {
             }
         }
     }
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                self.uid = user?.uid
+                self.goToFeedVC()
+            } else {
+                // No user is signed in.
+            }
+        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
