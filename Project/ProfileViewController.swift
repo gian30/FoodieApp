@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import QuartzCore
 class ProfileViewController: UIViewController {
 
     @IBAction func buttonLogOut(_ sender: Any) {
