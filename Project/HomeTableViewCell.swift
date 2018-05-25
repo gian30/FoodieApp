@@ -7,9 +7,36 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionPost: UILabel!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userPhoto: UIImageView!
+    @IBOutlet weak var imagePost: UIImageView!
+
+    @IBOutlet weak var heightPhoto: NSLayoutConstraint!
+    var post: Post? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    
+    func updateView() {
+        descriptionPost.text = post?.description
+       
+        if let photoUrlString = post?.photoUrl {
+            let photoUrl = URL(string: photoUrlString)
+            imagePost.sd_setImage(with: photoUrl)
+        }
+    }
+    
+    var user: User? {
+        didSet {
+            //setupUserInfo()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

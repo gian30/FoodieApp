@@ -9,12 +9,14 @@
 import Foundation
 import FirebaseAuth
 class Post {
-    var caption: String?
+    var description: String?
     var photoUrl: String?
-    init(captionText: String, photoUrlString: String) {
-        caption = captionText
+    init(descriptionText: String, photoUrlString: String) {
+        description = descriptionText
         photoUrl = photoUrlString
     }
+    
 }
+
 
 
