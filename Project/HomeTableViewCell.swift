@@ -25,11 +25,11 @@ class HomeTableViewCell: UITableViewCell {
     
     func updateView() {
         descriptionPost.text = post?.description
-       
-        if let photoUrlString = post?.photoUrl {
-            let photoUrl = URL(string: photoUrlString)
-            imagePost.sd_setImage(with: photoUrl)
-        }
+        
+        let url_base = post?.photoUrl
+        let url = URL(string: (url_base)!)
+        let data = try? Data(contentsOf: url!)
+        imagePost.image = UIImage(data: data!)
     }
     
     var user: User? {

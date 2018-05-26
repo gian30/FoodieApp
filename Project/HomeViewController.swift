@@ -20,15 +20,13 @@ class HomeViewController: UIViewController{
         super.viewDidLoad()
         tableView.dataSource = self as! UITableViewDataSource
         loadPosts()
-        var post = Post(descriptionText: "test", photoUrlString: "url1")
-        print(post.description!)
-        print(post.photoUrl!)
+        
         
         // Do any additional setup after loading the view.
     }
     func loadPosts() {
         Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            print(snapshot.value)
+          
             if let dict = snapshot.value as? [String: Any] {
                 let photoUrl = dict["photo_url"] as! String
                 let descriptionText = dict["desc"] as! String
