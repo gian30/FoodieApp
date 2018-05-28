@@ -31,10 +31,15 @@ class HomeViewController: UIViewController{
                 let photoUrl = dict["photo_url"] as! String
                 let descriptionText = dict["desc"] as! String
                 
-                let post = Post(descriptionText: descriptionText, photoUrlString: photoUrl)
+                
+                
+                let url = URL(string: (photoUrl))
+                let data = try? Data(contentsOf: url!)
+                
+                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!)
                 
                 self.posts.append(post)
-                print(self.posts)
+                
                 self.tableView.reloadData()
             }
         }

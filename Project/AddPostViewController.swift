@@ -113,6 +113,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         UIGraphicsEndImageContext()
         return UIImage(data: imageData!)!
     }
+    
     func randomString(len:Int) -> String {
         let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var c = Array(charSet)

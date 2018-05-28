@@ -26,10 +26,8 @@ class HomeTableViewCell: UITableViewCell {
     func updateView() {
         descriptionPost.text = post?.description
         
-        let url_base = post?.photoUrl
-        let url = URL(string: (url_base)!)
-        let data = try? Data(contentsOf: url!)
-        imagePost.image = UIImage(data: data!)
+        
+        imagePost.image = post?.photo
     }
     
     var user: User? {
