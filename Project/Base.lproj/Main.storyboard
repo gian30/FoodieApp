@@ -309,11 +309,11 @@
             <objects>
                 <viewController id="add-AS-QEC" customClass="HomeViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBy-wW-yfC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="521" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-k5-Ey0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="521" id="KmL-5o-V5S" customClass="HomeTableViewCell" customModule="Project" customModuleProvider="target">
@@ -541,31 +541,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adI-Tz-nmK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adI-Tz-nmK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="FSy-Xz-kAW"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cu-Xr-eee">
-                                <rect key="frame" x="119" y="488" width="137" height="30"/>
-                                <state key="normal" title="Upload Photo"/>
+                                <rect key="frame" x="16" y="569" width="87" height="30"/>
+                                <state key="normal" title="Select photo"/>
                                 <connections>
                                     <action selector="AddPost:" destination="ws7-We-TNF" eventType="touchUpInside" id="ovw-LJ-wSR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1t-Sw-okl">
+                                <rect key="frame" x="0.0" y="469" width="375" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="jvF-7F-IFN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np3-U1-YIH">
+                                <rect key="frame" x="275" y="569" width="84" height="30"/>
+                                <state key="normal" title="Upload post"/>
+                                <connections>
+                                    <action selector="uploadPost:" destination="ws7-We-TNF" eventType="touchUpInside" id="fR7-Dz-BNM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ih0-xH-PyU" firstAttribute="bottom" secondItem="2Cu-Xr-eee" secondAttribute="bottom" constant="100" id="A6c-Ux-pm5"/>
                             <constraint firstItem="adI-Tz-nmK" firstAttribute="leading" secondItem="Ih0-xH-PyU" secondAttribute="leading" id="CBG-jB-4G9"/>
-                            <constraint firstItem="Ih0-xH-PyU" firstAttribute="trailing" secondItem="2Cu-Xr-eee" secondAttribute="trailing" constant="119" id="OxE-UA-bPc"/>
+                            <constraint firstItem="C1t-Sw-okl" firstAttribute="top" secondItem="adI-Tz-nmK" secondAttribute="bottom" constant="270" id="DVr-hQ-QBD"/>
+                            <constraint firstItem="C1t-Sw-okl" firstAttribute="leading" secondItem="Ih0-xH-PyU" secondAttribute="leading" id="IMW-c9-ejT"/>
+                            <constraint firstItem="Ih0-xH-PyU" firstAttribute="trailing" secondItem="Np3-U1-YIH" secondAttribute="trailing" constant="16" id="PaG-Hq-RJI"/>
+                            <constraint firstItem="2Cu-Xr-eee" firstAttribute="leading" secondItem="Ih0-xH-PyU" secondAttribute="leading" constant="16" id="Sc8-le-eyQ"/>
                             <constraint firstItem="adI-Tz-nmK" firstAttribute="top" secondItem="ODr-hg-gC9" secondAttribute="top" id="SsM-PG-DfH"/>
-                            <constraint firstItem="2Cu-Xr-eee" firstAttribute="leading" secondItem="Ih0-xH-PyU" secondAttribute="leading" constant="119" id="md5-zz-Jwe"/>
+                            <constraint firstItem="2Cu-Xr-eee" firstAttribute="top" secondItem="C1t-Sw-okl" secondAttribute="bottom" constant="10" id="VAI-dA-8kt"/>
+                            <constraint firstItem="Np3-U1-YIH" firstAttribute="top" secondItem="C1t-Sw-okl" secondAttribute="bottom" constant="10" id="YDs-UX-xfm"/>
+                            <constraint firstItem="C1t-Sw-okl" firstAttribute="leading" secondItem="Ih0-xH-PyU" secondAttribute="leading" id="dWn-E9-f5l"/>
+                            <constraint firstItem="C1t-Sw-okl" firstAttribute="trailing" secondItem="Ih0-xH-PyU" secondAttribute="trailing" id="hSu-7y-FZu"/>
                             <constraint firstItem="Ih0-xH-PyU" firstAttribute="trailing" secondItem="adI-Tz-nmK" secondAttribute="trailing" id="nHX-jJ-Upc"/>
+                            <constraint firstItem="C1t-Sw-okl" firstAttribute="trailing" secondItem="Ih0-xH-PyU" secondAttribute="trailing" id="oh6-dl-WKJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ih0-xH-PyU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Video" image="Photo" selectedImage="Photo" id="aQH-vb-ubb"/>
                     <connections>
+                        <outlet property="descField" destination="C1t-Sw-okl" id="GXi-wt-X2x"/>
                         <outlet property="imageView" destination="adI-Tz-nmK" id="Ucm-9c-CGL"/>
+                        <segue destination="add-AS-QEC" kind="show" identifier="goToFeed" id="9og-dO-1Rr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgl-8O-CW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -651,6 +678,7 @@
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8TQ-WD-Cwg"/>
+        <segue reference="cl2-zH-J0k"/>
+        <segue reference="9og-dO-1Rr"/>
     </inferredMetricsTieBreakers>
 </document>

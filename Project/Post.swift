@@ -11,9 +11,13 @@ import FirebaseAuth
 class Post {
     var description: String?
     var photo: UIImage?
-    init(descriptionText: String, photoData: UIImage) {
+    var username: String?
+    var likes: Int
+    init(descriptionText: String, photoData: UIImage, usernameText: String, likesNum: Int) {
         description = descriptionText
         photo = photoData
+        username = usernameText
+        likes = likesNum
     }
     
 }

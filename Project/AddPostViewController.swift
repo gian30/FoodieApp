@@ -9,12 +9,24 @@
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
+import Firebase
+
+
 class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    var user = Auth.auth().currentUser;
+    var data: NSData!
     var ref: DatabaseReference!
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var descField: UITextField!
     @IBAction func AddPost(_ sender: Any) {
         uploadPhoto()
     }
+    @IBAction func uploadPost(_ sender: Any) {
+        uploadPost(data: data)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,29 +50,18 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             var image = info[UIImagePickerControllerOriginalImage] as! UIImage
             image = resizeImage(image: image)
-            let data = UIImagePNGRepresentation(image)! as NSData
+            data = UIImagePNGRepresentation(image)! as NSData
             data.write(toFile: localPath!, atomically: true)
             //let imageData = NSData(contentsOfFile: localPath!)!
             let photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
             print(photoURL.absoluteURL.absoluteString)
             
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let riversRef = storageRef.child("Users/username/\(randomString(len: 25)).jpg")
-            let uploadTask = riversRef.putData(data as Data, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    return
-                }
-                
-                let downloadURL = metadata.downloadURL()?.absoluteString
-                
-                
-                self.ref = Database.database().reference()
-                self.ref.child("posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "test"])
-            }
+       
             
             imageView.image = image
             imageView.contentMode = .scaleAspectFill
+            
+            
         }
         
         
@@ -73,8 +74,26 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         controller.sourceType = .photoLibrary
         present(controller, animated: true, completion: nil)
     }
-    
-    
+    func uploadPost(data: NSData){
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let postRef = storageRef.child("posts/\(randomString(len: 25)).jpg")
+        let uploadTask = postRef.putData(data as Data, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                return
+            }
+            
+            let downloadURL = metadata.downloadURL()?.absoluteString
+            
+            
+            self.ref = Database.database().reference()
+            self.ref.child("posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": self.descField.text, "username":self.user?.email, "likes": 0])
+        }
+        self.goToFeedVC()
+    }
+    func goToFeedVC(){
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
     //image compression
     func resizeImage(image: UIImage) -> UIImage {
         var actualHeight: Float = Float(image.size.height)
@@ -113,7 +132,6 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         UIGraphicsEndImageContext()
         return UIImage(data: imageData!)!
     }
-    
     func randomString(len:Int) -> String {
         let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var c = Array(charSet)
@@ -122,6 +140,9 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             s.append(c[Int(arc4random()) % c.count])
         }
         return s
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

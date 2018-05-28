@@ -25,7 +25,7 @@ class HomeTableViewCell: UITableViewCell {
     
     func updateView() {
         descriptionPost.text = post?.description
-        
+        username.text = post?.username
         
         imagePost.image = post?.photo
     }

@@ -30,13 +30,13 @@ class HomeViewController: UIViewController{
             if let dict = snapshot.value as? [String: Any] {
                 let photoUrl = dict["photo_url"] as! String
                 let descriptionText = dict["desc"] as! String
-                
-                
+                let username = dict["username"] as! String
+                let likes = dict["likes"] as! Int
                 
                 let url = URL(string: (photoUrl))
                 let data = try? Data(contentsOf: url!)
                 
-                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!)
+                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!, usernameText: username, likesNum: likes)
                 
                 self.posts.append(post)
                 
