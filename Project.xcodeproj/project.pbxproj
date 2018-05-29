@@ -10,6 +10,7 @@
 		11F08AA620B86269001F2270 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F08AA520B86269001F2270 /* HomeViewController.swift */; };
 		348FD1E24EA87E003B6B96B0 /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037064584139205183ADA89 /* Pods_ProjectTests.framework */; };
 		4E74A5D0152A5545B514299B /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */; };
+		51053EF520BC85C7002AC526 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51053EF420BC85C7002AC526 /* CameraController.swift */; };
 		AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10809C20B8D4A200EED163 /* AddPostViewController.swift */; };
 		AE2F653B2029F1E5007D267E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F653A2029F1E5007D267E /* AppDelegate.swift */; };
 		AE2F653D2029F1E5007D267E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F653C2029F1E5007D267E /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		11F08AA520B86269001F2270 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037064584139205183ADA89 /* Pods_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330FB6FBF2F4E5387EFC3C95 /* Pods-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		51053EF420BC85C7002AC526 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8541B32FDE186622F54D488F /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		886E08423105828BF007D406 /* Pods_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD1A19789274856DF29FD8F /* Pods-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				AE2F653E2029F1E5007D267E /* Main.storyboard */,
 				AE10809C20B8D4A200EED163 /* AddPostViewController.swift */,
 				AE2F65412029F1E5007D267E /* Assets.xcassets */,
+				51053EF420BC85C7002AC526 /* CameraController.swift */,
 				AE2F65682029F440007D267E /* GoogleService-Info.plist */,
 				AE2F65432029F1E5007D267E /* LaunchScreen.storyboard */,
 				AE2F65462029F1E5007D267E /* Info.plist */,
@@ -519,6 +522,7 @@
 				AE7B88B420B728760083F6E6 /* UserApi.swift in Sources */,
 				AE7B88BA20B72D170083F6E6 /* User.swift in Sources */,
 				AE2F653B2029F1E5007D267E /* AppDelegate.swift in Sources */,
+				51053EF520BC85C7002AC526 /* CameraController.swift in Sources */,
 				11F08AA620B86269001F2270 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,9 +691,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FCW8FU4XH;
+				DEVELOPMENT_TEAM = S997277523;
 				INFOPLIST_FILE = Project/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = DAM.Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -702,9 +706,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2FCW8FU4XH;
+				DEVELOPMENT_TEAM = S997277523;
 				INFOPLIST_FILE = Project/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = DAM.Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
