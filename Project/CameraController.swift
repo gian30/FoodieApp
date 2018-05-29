@@ -8,10 +8,17 @@
 
 import AVFoundation
 import UIKit
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
+import Firebase
+import Photos
 
 class CameraController: NSObject {
     var captureSession: AVCaptureSession?
-    
+    var user = Auth.auth().currentUser;
+    var data: NSData!
+    var ref: DatabaseReference!
     var currentCameraPosition: CameraPosition?
     
     var frontCamera: AVCaptureDevice?
@@ -195,13 +202,35 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
             
         else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
             let image = UIImage(data: data) {
-            
-           // self.photoCaptureCompletionBlock?(image, nil)
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let postRef = storageRef.child("posts/\(randomString(len: 25)).jpg")
+            let uploadTask = postRef.putData(data as Data, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    return
+                }
+                
+                let downloadURL = metadata.downloadURL()?.absoluteString
+                
+                
+                self.ref = Database.database().reference()
+                self.ref.child("posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user?.email, "likes": 0])
+            }
+            //self.photoCaptureCompletionBlock?(image, nil)
         }
             
         else {
             self.photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
         }
+    }
+    func randomString(len:Int) -> String {
+        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var c = Array(charSet)
+        var s:String = ""
+        for n in (1...10) {
+            s.append(c[Int(arc4random()) % c.count])
+        }
+        return s
     }
 }
 
