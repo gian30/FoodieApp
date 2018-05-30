@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class HomeViewController: UIViewController{
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -26,7 +26,7 @@ class HomeViewController: UIViewController{
     }
     func loadPosts() {
         Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-          
+            
             if let dict = snapshot.value as? [String: Any] {
                 let photoUrl = dict["photo_url"] as! String
                 let descriptionText = dict["desc"] as! String
@@ -44,12 +44,12 @@ class HomeViewController: UIViewController{
             }
         }
     }
-  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,9 +58,9 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! HomeTableViewCell
         let post = posts[indexPath.row]
-     
+        
         cell.post = post
-       
+        
         
         return cell
     }

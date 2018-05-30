@@ -44,7 +44,10 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     let cameraController = CameraController()
     
     override var prefersStatusBarHidden: Bool { return true }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
     override func viewDidLoad() {
         
         func configureCameraController() {
@@ -56,7 +59,8 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                 try? self.cameraController.displayPreview(on: self.capturePreviewView)
             }
         }
-        
+
+
         func styleCaptureButton() {
             //captureButton.layer.borderColor = UIColor.black.cgColor
             //captureButton.layer.borderWidth = 2
@@ -109,8 +113,10 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             try? PHPhotoLibrary.shared().performChangesAndWait {
                 PHAssetChangeRequest.creationRequestForAsset(from: image)
+                
             }
         }
+        tabBarController?.selectedIndex = 1
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
