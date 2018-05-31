@@ -27,6 +27,7 @@
 		AE7B88BA20B72D170083F6E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B88B920B72D170083F6E6 /* User.swift */; };
 		AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */; };
 		C20D58CBB51514491F81D6A0 /* Pods_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886E08423105828BF007D406 /* Pods_ProjectUITests.framework */; };
+		C47E64FD20C0622300824198 /* PostThumbImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E64FC20C0622300824198 /* PostThumbImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		AE7B88B920B72D170083F6E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47E64FC20C0622300824198 /* PostThumbImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostThumbImageCell.swift; sourceTree = "<group>"; };
 		F4B018065D95397C1E64D67F /* Pods-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F978EFE4C8BDBC1FF957EF8C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 			children = (
 				AE7B88B720B72C050083F6E6 /* Post.swift */,
 				AE7B88B920B72D170083F6E6 /* User.swift */,
+				C47E64FC20C0622300824198 /* PostThumbImageCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */,
 				AE64D97620B880D700D68C4E /* HomeTableViewCell.swift in Sources */,
 				AE7B88B820B72C050083F6E6 /* Post.swift in Sources */,
+				C47E64FD20C0622300824198 /* PostThumbImageCell.swift in Sources */,
 				116E808920BEDCC800F56358 /* EditPostViewController.swift in Sources */,
 				1133AD0A20C0620E0009FFB2 /* UserViewController.swift in Sources */,
 				AE7B88BA20B72D170083F6E6 /* User.swift in Sources */,
