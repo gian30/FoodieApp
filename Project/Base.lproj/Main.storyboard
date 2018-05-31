@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Regular</string>
-        </array>
-        <array key="SinhalaSangamMN.ttc">
-            <string>SinhalaSangamMN</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -264,15 +256,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27v-Gk-Q89">
-                                <rect key="frame" x="329" y="20" width="30" height="30"/>
-                                <state key="normal" title="Salir"/>
-                                <connections>
-                                    <action selector="buttonLogOut:" destination="S1l-ZM-aC2" eventType="touchUpInside" id="JUq-as-Mm4"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugp-Dl-of3">
-                                <rect key="frame" x="179" y="65" width="113" height="35"/>
+                                <rect key="frame" x="182" y="141" width="177" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cyan="0.00015814602375030518" magenta="0.00020354241132736206" yellow="4.4323860493022949e-06" black="0.055329623287671235" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -281,18 +266,33 @@
                                     <segue destination="aRZ-vf-voQ" kind="show" id="xfG-3e-6iJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-yO-rG9">
-                                <rect key="frame" x="128" y="496" width="118" height="21"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-tv-DZ5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="icf-YT-b5s">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="2Xf-AM-dOd">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="27v-Gk-Q89">
+                                                <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Salir"/>
+                                                <connections>
+                                                    <action selector="buttonLogOut:" destination="S1l-ZM-aC2" eventType="touchUpInside" id="JUq-as-Mm4"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoM-gz-Zgz">
+                                <rect key="frame" x="16" y="85" width="98" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="27v-Gk-Q89" firstAttribute="top" secondItem="8zw-1g-IYB" secondAttribute="top" id="Jhh-By-JjL"/>
-                            <constraint firstItem="8zw-1g-IYB" firstAttribute="trailing" secondItem="27v-Gk-Q89" secondAttribute="trailing" constant="16" id="Qjn-Rd-5Zm"/>
+                            <constraint firstItem="cBx-tv-DZ5" firstAttribute="trailing" secondItem="8zw-1g-IYB" secondAttribute="trailing" id="4Ni-RY-9Db"/>
+                            <constraint firstItem="cBx-tv-DZ5" firstAttribute="leading" secondItem="8zw-1g-IYB" secondAttribute="leading" id="aQL-k4-KUZ"/>
+                            <constraint firstItem="cBx-tv-DZ5" firstAttribute="top" secondItem="8zw-1g-IYB" secondAttribute="top" id="s71-HV-2RF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8zw-1g-IYB"/>
                     </view>
@@ -302,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1b-9T-2Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="-658"/>
+            <point key="canvasLocation" x="-2146.4000000000001" y="-1487.4062968515743"/>
         </scene>
         <!--Edit Post View Controller-->
         <scene sceneID="cW9-Is-k4i">
@@ -366,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPt-Mn-kzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550" y="-658"/>
+            <point key="canvasLocation" x="1577" y="-1487"/>
         </scene>
         <!--Home-->
         <scene sceneID="JSr-da-oL5">
@@ -523,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdU-Nv-7Qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="-1451"/>
+            <point key="canvasLocation" x="-348" y="-658"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T8y-Hb-B6h">
