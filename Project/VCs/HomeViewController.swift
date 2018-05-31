@@ -37,7 +37,6 @@ class HomeViewController: UIViewController{
                 let data = try? Data(contentsOf: url!)
                 
                 let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!, usernameText: username, likesNum: likes)
-                
                 self.posts.append(post)
                 
                 self.tableView.reloadData()

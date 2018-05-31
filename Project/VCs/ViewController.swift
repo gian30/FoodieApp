@@ -85,7 +85,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signUp"{
-            if let destination = segue.identifier as? UserVC {
+            if let destination = segue.identifier as? UserViewController {
                 if uid != nil {
                     destination.uid = uid
                 }
