@@ -41,3 +41,16 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
     */
 
 }
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostThumbImageCell", for: indexPath) as! PostThumbImageCell
+        cell.thumbImageView.image = UIImage(named: "like")
+        
+        return cell
+    }
+}

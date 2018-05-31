@@ -287,6 +287,42 @@
                                 <rect key="frame" x="16" y="85" width="98" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mEc-jd-3MV">
+                                <rect key="frame" x="0.0" y="247" width="375" height="371"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rYd-3w-f8V">
+                                    <size key="itemSize" width="121" height="121"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostThumbImageCell" id="hCk-BH-Dcy" customClass="PostThumbImageCell" customModule="Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBk-ax-vqQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="CBk-ax-vqQ" firstAttribute="top" secondItem="hCk-BH-Dcy" secondAttribute="top" id="0ak-X1-giH"/>
+                                            <constraint firstAttribute="trailing" secondItem="CBk-ax-vqQ" secondAttribute="trailing" id="2br-eh-UeN"/>
+                                            <constraint firstItem="CBk-ax-vqQ" firstAttribute="leading" secondItem="hCk-BH-Dcy" secondAttribute="leading" id="6Y4-rN-Uqf"/>
+                                            <constraint firstAttribute="bottom" secondItem="CBk-ax-vqQ" secondAttribute="bottom" id="Sw9-kd-QaE"/>
+                                        </constraints>
+                                        <size key="customSize" width="121" height="121"/>
+                                        <connections>
+                                            <outlet property="thumbImageView" destination="CBk-ax-vqQ" id="xAd-iY-45U"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
