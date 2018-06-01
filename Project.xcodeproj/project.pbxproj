@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1133AD0A20C0620E0009FFB2 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133AD0920C0620E0009FFB2 /* UserViewController.swift */; };
 		1133AD0E20C06F950009FFB2 /* PostThumbImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */; };
 		116E808920BEDCC800F56358 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E808820BEDCC800F56358 /* EditPostViewController.swift */; };
+		1196E02320C07440006E9895 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196E02220C07440006E9895 /* UserViewController.swift */; };
 		11F08AA620B86269001F2270 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F08AA520B86269001F2270 /* HomeViewController.swift */; };
 		348FD1E24EA87E003B6B96B0 /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037064584139205183ADA89 /* Pods_ProjectTests.framework */; };
 		4E74A5D0152A5545B514299B /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */; };
@@ -48,9 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1133AD0920C0620E0009FFB2 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = ../../../../../.Trash/UserViewController.swift; sourceTree = "<group>"; };
 		1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostThumbImageCell.swift; sourceTree = "<group>"; };
 		116E808820BEDCC800F56358 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		1196E02220C07440006E9895 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = ../../../master/FoodieApp/Project/VCs/UserViewController.swift; sourceTree = "<group>"; };
 		11F08AA520B86269001F2270 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037064584139205183ADA89 /* Pods_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330FB6FBF2F4E5387EFC3C95 /* Pods-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		1133AD0420C061BD0009FFB2 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				1133AD0920C0620E0009FFB2 /* UserViewController.swift */,
+				1196E02220C07440006E9895 /* UserViewController.swift */,
 				116E808820BEDCC800F56358 /* EditPostViewController.swift */,
 				11F08AA520B86269001F2270 /* HomeViewController.swift */,
 				AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */,
@@ -517,12 +517,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE2F653D2029F1E5007D267E /* ViewController.swift in Sources */,
+				1196E02320C07440006E9895 /* UserViewController.swift in Sources */,
 				AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */,
 				AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */,
 				AE64D97620B880D700D68C4E /* HomeTableViewCell.swift in Sources */,
 				AE7B88B820B72C050083F6E6 /* Post.swift in Sources */,
 				116E808920BEDCC800F56358 /* EditPostViewController.swift in Sources */,
-				1133AD0A20C0620E0009FFB2 /* UserViewController.swift in Sources */,
 				AE7B88BA20B72D170083F6E6 /* User.swift in Sources */,
 				1133AD0E20C06F950009FFB2 /* PostThumbImageCell.swift in Sources */,
 				AE2F653B2029F1E5007D267E /* AppDelegate.swift in Sources */,

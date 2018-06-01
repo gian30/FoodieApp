@@ -116,7 +116,7 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
             }
         }
-        tabBarController?.selectedIndex = 1
+        tabBarController?.selectedIndex = 0
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
