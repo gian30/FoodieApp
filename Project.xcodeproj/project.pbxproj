@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1133AD0E20C06F950009FFB2 /* PostThumbImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */; };
 		116E808920BEDCC800F56358 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E808820BEDCC800F56358 /* EditPostViewController.swift */; };
-		11948FFD20C19E5D005D738A /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11948FFC20C19E5D005D738A /* UserViewController.swift */; };
 		11F08AA620B86269001F2270 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F08AA520B86269001F2270 /* HomeViewController.swift */; };
 		348FD1E24EA87E003B6B96B0 /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037064584139205183ADA89 /* Pods_ProjectTests.framework */; };
 		4E74A5D0152A5545B514299B /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostThumbImageCell.swift; sourceTree = "<group>"; };
 		116E808820BEDCC800F56358 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
-		11948FFC20C19E5D005D738A /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		11F08AA520B86269001F2270 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037064584139205183ADA89 /* Pods_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330FB6FBF2F4E5387EFC3C95 /* Pods-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			children = (
 				116E808820BEDCC800F56358 /* EditPostViewController.swift */,
 				11F08AA520B86269001F2270 /* HomeViewController.swift */,
-				11948FFC20C19E5D005D738A /* UserViewController.swift */,
 				AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */,
 				AE10809C20B8D4A200EED163 /* AddPostViewController.swift */,
 				AE2F653C2029F1E5007D267E /* ViewController.swift */,
@@ -517,7 +514,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE2F653D2029F1E5007D267E /* ViewController.swift in Sources */,
-				11948FFD20C19E5D005D738A /* UserViewController.swift in Sources */,
 				AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */,
 				AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */,
 				AE64D97620B880D700D68C4E /* HomeTableViewCell.swift in Sources */,

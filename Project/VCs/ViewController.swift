@@ -9,31 +9,36 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 class ViewController: UIViewController, UIAlertViewDelegate {
     var errorLogIn: Bool = false
-    
+    var ref: DatabaseReference!
     @IBAction func registerButton(_ sender: Any) {
         
   
         let alert = UIAlertController(title: "Nuevo Usuario",
                                       message: "Introduce tus datos por favor",
                                       preferredStyle: .alert)
-  
-        let cancelAction = UIAlertAction(title: "Cancelar",
-                                         style: .default)
-        let saveAction = UIAlertAction(title: "Guardar",
+        let saveAction = UIAlertAction(title: "Registrar",
                                        style: .default) { action in
                                         let emailField = alert.textFields![0]
                                         let passwordField = alert.textFields![1]
+                                        let usernameField = alert.textFields![2]
+                                        let fullnameField = alert.textFields![3]
                                         //3.
                                         Auth.auth().createUser(withEmail: emailField.text!,
                                                                password: passwordField.text!) { user, error in
                                                                 if error == nil {
-                                                                    self.goToCreateUserVC()
+                                                                    user?.uid
+                                                                    self.ref = Database.database().reference()
+                                                                    self.ref.child("users").child((user?.uid)!).setValue(["email": user?.email, "username": usernameField.text, "fullname": fullnameField.text])
+                                                                    self.self.goToFeedVC()
                                                                 }
-                                                                
                                         }
         }
+        let cancelAction = UIAlertAction(title: "Cancelar",
+                                         style: .default)
+
       
         alert.addTextField { textEmail in
             textEmail.placeholder = "Email"
@@ -42,9 +47,16 @@ class ViewController: UIViewController, UIAlertViewDelegate {
             textPassword.isSecureTextEntry = true
             textPassword.placeholder = "Contraseña"
         }
+        alert.addTextField { textUsername in
+            textUsername.placeholder = "Nombre de usuario"
+        }
+        alert.addTextField { textFullname in
+            textFullname.placeholder = "Nombre completo"
+        }
         //6.
-        alert.addAction(saveAction)
+        
         alert.addAction(cancelAction)
+        alert.addAction(saveAction)
         //7.
         present(alert, animated: true, completion: nil)
         
@@ -74,38 +86,23 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                     alertView.show()
                 }
             }
-            
-            
-        }}
-    func goToCreateUserVC(){
-        performSegue(withIdentifier: "signUp", sender: nil)
+        }
     }
+    
+
     func goToFeedVC(){
         performSegue(withIdentifier: "toFeed", sender: nil)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signUp"{
-            if let destination = segue.identifier as? UserVC {
-                if uid != nil {
-                    destination.uid = uid
-                }
-                if emailField.text != nil {
-                    destination.emailField = emailField.text
-                }
-                if passwordField.text != nil{
-                    destination.passwordField = passwordField.text
-                }
-            }
-        }
-    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-      Auth.auth().addStateDidChangeListener() { auth, user in
+        Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.goToFeedVC()
             }
