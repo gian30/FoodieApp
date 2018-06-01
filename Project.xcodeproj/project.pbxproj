@@ -170,7 +170,6 @@
 				AE2F65682029F440007D267E /* GoogleService-Info.plist */,
 				AE2F65412029F1E5007D267E /* Assets.xcassets */,
 				AE2F65462029F1E5007D267E /* Info.plist */,
-				51053EF420BC85C7002AC526 /* CameraController.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		AE7B88B220B7284C0083F6E6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				51053EF420BC85C7002AC526 /* CameraController.swift */,
 				AE7B88B720B72C050083F6E6 /* Post.swift */,
 				AE64D97520B880D700D68C4E /* HomeTableViewCell.swift */,
 				1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */,
