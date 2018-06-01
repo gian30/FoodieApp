@@ -14,7 +14,7 @@ import Firebase
 
 
 class EditPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    var user = Auth.auth().currentUser;
+    var user = Auth.auth().currentUser!
     var data: NSData!
     var ref: DatabaseReference!
     @IBOutlet weak var imageView: UIImageView!
@@ -90,7 +90,8 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
             
             
             self.ref = Database.database().reference()
-            self.ref.child("posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": self.descField.text, "username":self.user?.email, "likes": 0])
+            
+            self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": self.descField.text, "username":self.user.email, "likes": 0])
         }
         tabBarController?.selectedIndex = 0
         

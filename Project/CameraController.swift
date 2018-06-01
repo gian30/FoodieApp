@@ -16,7 +16,7 @@ import Photos
 
 class CameraController: NSObject {
     var captureSession: AVCaptureSession?
-    var user = Auth.auth().currentUser;
+    var user = Auth.auth().currentUser!;
     var data: NSData!
     var ref: DatabaseReference!
     var currentCameraPosition: CameraPosition?
@@ -214,7 +214,7 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
                 
                 if Auth.auth().currentUser != nil {
                     self.ref = Database.database().reference()
-                    self.ref.child("posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user?.email, "uid":self.user?.uid, "likes": 0])
+                    self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0])
                 } else {
                     print("error user not logged")
                 }
