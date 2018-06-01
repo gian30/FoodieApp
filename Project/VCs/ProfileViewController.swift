@@ -11,7 +11,10 @@ import FirebaseAuth
 import Firebase
 import QuartzCore
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+     var posts = [Post]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+var user = Auth.auth().currentUser!
     @IBAction func buttonLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
 let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
@@ -21,7 +24,8 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        collectionView.dataSource = self as! UICollectionViewDataSource
+       loadPosts()
         // Do any additional setup after loading the view.
     }
 
@@ -30,13 +34,36 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         // Dispose of any resources that can be recreated.
     }
     
+    func loadPosts() {
+        Database.database().reference().child("users/\(user.uid)/posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+            
+            if let dict = snapshot.value as? [String: Any] {
+                let photoUrl = dict["photo_url"] as! String
+                let descriptionText = dict["desc"] as! String
+                let username = dict["username"] as! String
+                let likes = dict["likes"] as! Int
+                
+                let url = URL(string: (photoUrl))
+                let data = try? Data(contentsOf: url!)
+                
+                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!, usernameText: username, likesNum: likes)
+                self.posts.append(post)
+                
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostThumbImageCell", for: indexPath) as! PostThumbImageCell
-        cell.thumbImageView.image = UIImage(named: "like")
+        let post = posts[indexPath.row]
+        
+        cell.thumbImageView.image = post.photo
+        
         
         return cell
     }
