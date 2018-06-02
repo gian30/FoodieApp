@@ -13,6 +13,7 @@
 		348FD1E24EA87E003B6B96B0 /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037064584139205183ADA89 /* Pods_ProjectTests.framework */; };
 		4E74A5D0152A5545B514299B /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */; };
 		51053EF520BC85C7002AC526 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51053EF420BC85C7002AC526 /* CameraController.swift */; };
+		AE03DC5A20C2996200169C2B /* FollowProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03DC5920C2996200169C2B /* FollowProfileViewController.swift */; };
 		AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10809C20B8D4A200EED163 /* AddPostViewController.swift */; };
 		AE2F653B2029F1E5007D267E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F653A2029F1E5007D267E /* AppDelegate.swift */; };
 		AE2F653D2029F1E5007D267E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F653C2029F1E5007D267E /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		886E08423105828BF007D406 /* Pods_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD1A19789274856DF29FD8F /* Pods-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A407B3556CB3484C6A7628A9 /* Pods-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE03DC5920C2996200169C2B /* FollowProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowProfileViewController.swift; sourceTree = "<group>"; };
 		AE10809C20B8D4A200EED163 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		AE2F65372029F1E5007D267E /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2F653A2029F1E5007D267E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				AE10809C20B8D4A200EED163 /* AddPostViewController.swift */,
 				AE2F653C2029F1E5007D267E /* ViewController.swift */,
 				C4E76A7720C1B0C600F202EA /* EditProfileVC.swift */,
+				AE03DC5920C2996200169C2B /* FollowProfileViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */,
 				AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */,
 				AE64D97620B880D700D68C4E /* HomeTableViewCell.swift in Sources */,
+				AE03DC5A20C2996200169C2B /* FollowProfileViewController.swift in Sources */,
 				AE7B88B820B72C050083F6E6 /* Post.swift in Sources */,
 				116E808920BEDCC800F56358 /* EditPostViewController.swift in Sources */,
 				AE7B88BA20B72D170083F6E6 /* User.swift in Sources */,

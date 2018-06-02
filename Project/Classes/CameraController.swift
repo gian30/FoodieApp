@@ -214,7 +214,7 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
                 
                 if Auth.auth().currentUser != nil {
                     self.ref = Database.database().reference()
-                    self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0])
+                    self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0, "isLast": true])
                 } else {
                     print("error user not logged")
                 }
