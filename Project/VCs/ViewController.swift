@@ -13,7 +13,7 @@ import FirebaseDatabase
 class ViewController: UIViewController, UIAlertViewDelegate {
     var errorLogIn: Bool = false
     var ref: DatabaseReference!
-    var defaultPhoto = "https://firebasestorage.googleapis.com/v0/b/project-218c7.appspot.com/o/user%2FtxgGaqWr9sRQSySYY2QKEx0OKFG3?alt=media&token=eee34593-7f0d-455e-97c3-0fd13cb1cb8b"
+    var defaultPhoto = "https://firebasestorage.googleapis.com/v0/b/project-218c7.appspot.com/o/Profile_Selected%403x.png?alt=media&token=e538743e-aaac-44ff-8002-97ea923df569"
     @IBAction func registerButton(_ sender: Any) {
         
         
