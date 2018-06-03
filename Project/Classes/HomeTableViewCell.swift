@@ -50,6 +50,7 @@ class HomeTableViewCell: UITableViewCell {
         likes.setTitle(String(describing: post.likes), for: UIControlState.normal)
         if post.likes == 0 {
             likes.setTitle("Be the first to like this", for: UIControlState.normal)
+            likeimg.setBackgroundImage(UIImage(named: "like"), for: UIControlState.normal)
         }
     }
     

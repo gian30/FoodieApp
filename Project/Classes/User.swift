@@ -10,7 +10,10 @@ import Foundation
 class User {
     var email: String?
     var profileImageUrl: String?
+    var fullName: String?
     var username: String?
+    
+    
     var id: String?
     var isFollowing: Bool?
 }
@@ -20,8 +23,11 @@ extension User {
         let user = User()
         user.email = dict["email"] as? String
         user.profileImageUrl = dict["profileImageUrl"] as? String
+        user.fullName = dict["fullname"] as? String
         user.username = dict["username"] as? String
         user.id = key
+        
         return user
     }
 }
+

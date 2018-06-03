@@ -27,6 +27,7 @@
 		AE7B88B820B72C050083F6E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B88B720B72C050083F6E6 /* Post.swift */; };
 		AE7B88BA20B72D170083F6E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B88B920B72D170083F6E6 /* User.swift */; };
 		AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */; };
+		AEEA0A7A20C45FFC004C2503 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA0A7920C45FFC004C2503 /* FollowTableViewCell.swift */; };
 		C20D58CBB51514491F81D6A0 /* Pods_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886E08423105828BF007D406 /* Pods_ProjectUITests.framework */; };
 		C4E76A7820C1B0C600F202EA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E76A7720C1B0C600F202EA /* EditProfileVC.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		AE7B88B720B72C050083F6E6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		AE7B88B920B72D170083F6E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEDA04BD202E0CD5005A61DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AEEA0A7920C45FFC004C2503 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		C22517C86EBC0BE60C7CEACA /* Pods_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E76A7720C1B0C600F202EA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		F4B018065D95397C1E64D67F /* Pods-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				AE2F653C2029F1E5007D267E /* ViewController.swift */,
 				C4E76A7720C1B0C600F202EA /* EditProfileVC.swift */,
 				AE03DC5920C2996200169C2B /* FollowProfileViewController.swift */,
+				AEEA0A7920C45FFC004C2503 /* FollowTableViewCell.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				AE2F653D2029F1E5007D267E /* ViewController.swift in Sources */,
 				AE10809D20B8D4A200EED163 /* AddPostViewController.swift in Sources */,
+				AEEA0A7A20C45FFC004C2503 /* FollowTableViewCell.swift in Sources */,
 				AEDA04BE202E0CD5005A61DC /* ProfileViewController.swift in Sources */,
 				AE64D97620B880D700D68C4E /* HomeTableViewCell.swift in Sources */,
 				AE03DC5A20C2996200169C2B /* FollowProfileViewController.swift in Sources */,

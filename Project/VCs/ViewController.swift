@@ -13,6 +13,7 @@ import FirebaseDatabase
 class ViewController: UIViewController, UIAlertViewDelegate {
     var errorLogIn: Bool = false
     var ref: DatabaseReference!
+    var defaultPhoto = "https://firebasestorage.googleapis.com/v0/b/project-218c7.appspot.com/o/user%2FtxgGaqWr9sRQSySYY2QKEx0OKFG3?alt=media&token=eee34593-7f0d-455e-97c3-0fd13cb1cb8b"
     @IBAction func registerButton(_ sender: Any) {
         
   
@@ -30,9 +31,10 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                                                                password: passwordField.text!) { user, error in
                                                                 if error == nil {
                                                                     user?.uid
+                                                                    
                                                                     self.ref = Database.database().reference()
-                                                                    self.ref.child("users").child((user?.uid)!).setValue(["email": user?.email, "username": usernameField.text, "fullname": fullnameField.text])
-                                                                    self.self.goToFeedVC()
+                                                                    self.ref.child("users").child((user?.uid)!).setValue([ "profile_photo": self.defaultPhoto, "email": user?.email, "username": usernameField.text!, "fullname": fullnameField.text!])
+                                                                    self.goToFeedVC()
                                                                 }
                                         }
         }

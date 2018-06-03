@@ -583,6 +583,45 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XcD-yQ-CKI">
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="zNy-Bh-tKp" customClass="FollowTableViewCell" customModule="Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zNy-Bh-tKp" id="czW-wY-G7L">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-tg-aVK">
+                                                    <rect key="frame" x="15" y="0.0" width="43" height="43"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-a9-1II">
+                                                    <rect key="frame" x="66" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="leading" secondItem="czW-wY-G7L" secondAttribute="leading" constant="15" id="0RB-cT-8wZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="CRB-tg-aVK" secondAttribute="bottom" id="4IU-l0-RJc"/>
+                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="top" secondItem="czW-wY-G7L" secondAttribute="top" id="4Pr-hI-eUE"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="bottom" secondItem="czW-wY-G7L" secondAttribute="bottomMargin" id="5UD-yw-Xa5"/>
+                                                <constraint firstAttribute="trailing" secondItem="CRB-tg-aVK" secondAttribute="trailing" constant="317" id="ILW-Jf-pBb"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="top" secondItem="czW-wY-G7L" secondAttribute="topMargin" constant="1" id="NOt-ID-p48"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="leading" secondItem="CRB-tg-aVK" secondAttribute="trailing" constant="8" id="mba-3G-91J"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="bottom" secondItem="czW-wY-G7L" secondAttribute="bottomMargin" id="uLP-k5-LG4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="ee7-a9-1II" id="4jh-H0-WHg"/>
+                                            <outlet property="userImage" destination="CRB-tg-aVK" id="9tH-it-f4g"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0D0-aS-3ee" id="Tmw-YN-f65"/>
+                                    <outlet property="delegate" destination="0D0-aS-3ee" id="OUH-C7-mnJ"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="VBs-Bh-NTP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
