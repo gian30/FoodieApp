@@ -125,7 +125,6 @@
 				AE2F653C2029F1E5007D267E /* ViewController.swift */,
 				C4E76A7720C1B0C600F202EA /* EditProfileVC.swift */,
 				AE03DC5920C2996200169C2B /* FollowProfileViewController.swift */,
-				AEEA0A7920C45FFC004C2503 /* FollowTableViewCell.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -203,6 +202,7 @@
 			children = (
 				51053EF420BC85C7002AC526 /* CameraController.swift */,
 				AE7B88B720B72C050083F6E6 /* Post.swift */,
+				AEEA0A7920C45FFC004C2503 /* FollowTableViewCell.swift */,
 				AE64D97520B880D700D68C4E /* HomeTableViewCell.swift */,
 				1133AD0D20C06F950009FFB2 /* PostThumbImageCell.swift */,
 				AE7B88B920B72D170083F6E6 /* User.swift */,

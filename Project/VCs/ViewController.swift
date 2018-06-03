@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var defaultPhoto = "https://firebasestorage.googleapis.com/v0/b/project-218c7.appspot.com/o/user%2FtxgGaqWr9sRQSySYY2QKEx0OKFG3?alt=media&token=eee34593-7f0d-455e-97c3-0fd13cb1cb8b"
     @IBAction func registerButton(_ sender: Any) {
         
-  
+        
         let alert = UIAlertController(title: "Nuevo Usuario",
                                       message: "Introduce tus datos por favor",
                                       preferredStyle: .alert)
@@ -40,8 +40,8 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         }
         let cancelAction = UIAlertAction(title: "Cancelar",
                                          style: .default)
-
-      
+        
+        
         alert.addTextField { textEmail in
             textEmail.placeholder = "Email"
         }
@@ -91,11 +91,11 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         }
     }
     
-
+    
     func goToFeedVC(){
         performSegue(withIdentifier: "toFeed", sender: nil)
     }
-
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

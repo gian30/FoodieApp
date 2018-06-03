@@ -293,12 +293,17 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBk-ax-vqQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="121" id="7UR-Rz-6Od"/>
+                                                        <constraint firstAttribute="height" constant="121" id="eGA-uy-9fB"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="CBk-ax-vqQ" firstAttribute="top" secondItem="hCk-BH-Dcy" secondAttribute="top" id="0ak-X1-giH"/>
                                             <constraint firstAttribute="trailing" secondItem="CBk-ax-vqQ" secondAttribute="trailing" id="2br-eh-UeN"/>
+                                            <constraint firstItem="CBk-ax-vqQ" firstAttribute="centerY" secondItem="hCk-BH-Dcy" secondAttribute="centerY" id="5pP-x7-UcZ"/>
                                             <constraint firstItem="CBk-ax-vqQ" firstAttribute="leading" secondItem="hCk-BH-Dcy" secondAttribute="leading" id="6Y4-rN-Uqf"/>
                                             <constraint firstAttribute="bottom" secondItem="CBk-ax-vqQ" secondAttribute="bottom" id="Sw9-kd-QaE"/>
                                         </constraints>
@@ -342,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1b-9T-2Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2122" y="-1487"/>
+            <point key="canvasLocation" x="-2122.4000000000001" y="-1487.4062968515743"/>
         </scene>
         <!--Edit Post View Controller-->
         <scene sceneID="cW9-Is-k4i">

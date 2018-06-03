@@ -10,10 +10,10 @@ import Foundation
 import FirebaseAuth
 class Post {
     var description: String?
-    var photo: UIImage?
+    var photo: String?
     var username: String?
     var likes: Int
-    init(descriptionText: String, photoData: UIImage, usernameText: String, likesNum: Int) {
+    init(descriptionText: String, photoData: String, usernameText: String, likesNum: Int) {
         description = descriptionText
         photo = photoData
         username = usernameText

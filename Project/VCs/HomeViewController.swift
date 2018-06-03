@@ -13,8 +13,9 @@ import FirebaseDatabase
 class HomeViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
+ 
     
-    
+   
     var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +33,14 @@ class HomeViewController: UIViewController{
                 let descriptionText = dict["desc"] as! String
                 let username = dict["username"] as! String
                 let likes = dict["likes"] as! Int
-                
-                let url = URL(string: (photoUrl))
-                let data = try? Data(contentsOf: url!)
-                
-                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!, usernameText: username, likesNum: likes)
+                let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
                 self.posts.append(post)
-                
                 self.tableView.reloadData()
             }
         }
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,9 +56,13 @@ extension HomeViewController: UITableViewDataSource {
         let post = posts[indexPath.row]
         
         cell.post = post
+        cell.imagePost.image = nil
+        cell.imagePost?.downloadImage(from: post.photo)
         
         
         return cell
     }
 }
+
+
 

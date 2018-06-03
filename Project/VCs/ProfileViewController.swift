@@ -11,13 +11,13 @@ import FirebaseAuth
 import Firebase
 import QuartzCore
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-     var posts = [Post]()
+    var posts = [Post]()
     @IBOutlet weak var collectionView: UICollectionView!
     
-var user = Auth.auth().currentUser!
+    var user = Auth.auth().currentUser!
     @IBAction func buttonLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
-let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         self.show(vc!, sender: self)
     }
     
@@ -25,10 +25,10 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self as! UICollectionViewDataSource
-       loadPosts()
+        loadPosts()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,9 +46,8 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
                 let url = URL(string: (photoUrl))
                 let data = try? Data(contentsOf: url!)
                 
-                let post = Post(descriptionText: descriptionText, photoData: UIImage(data: data!)!, usernameText: username, likesNum: likes)
-                self.posts.append(post)
-                
+                let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
+                self.posts.append(post) 
                 self.collectionView.reloadData()
             }
         }
@@ -62,21 +61,21 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostThumbImageCell", for: indexPath) as! PostThumbImageCell
         let post = posts[indexPath.row]
         
-        cell.thumbImageView.image = post.photo
+        cell.thumbImageView.downloadImage(from: post.photo)
         
         
         return cell
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 

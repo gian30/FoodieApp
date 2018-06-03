@@ -13,11 +13,13 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionPost: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
+    var imageToShow : UIImageView!
     @IBOutlet weak var imagePost: UIImageView!
     @IBOutlet weak var likes: UIButton!
     @IBOutlet weak var heightPhoto: NSLayoutConstraint!
     var post: Post! {
         didSet {
+            
             updateView()
         }
     }
@@ -46,12 +48,12 @@ class HomeTableViewCell: UITableViewCell {
     func updateView() {
         descriptionPost.text = post?.description
         username.text = post?.username
-        imagePost.image = post?.photo
         likes.setTitle(String(describing: post.likes), for: UIControlState.normal)
         if post.likes == 0 {
             likes.setTitle("Be the first to like this", for: UIControlState.normal)
             likeimg.setBackgroundImage(UIImage(named: "like"), for: UIControlState.normal)
         }
+        
     }
     
     var user: User? {
@@ -70,3 +72,20 @@ class HomeTableViewCell: UITableViewCell {
     }
 }
 
+extension UIImageView {
+    func downloadImage(from imgURL: String!) {
+        let url = URLRequest(url: URL(string: imgURL)!)
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+        }
+        
+        task.resume()
+    }
+}
