@@ -18,7 +18,7 @@ class FollowProfileViewController: UIViewController , UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self as! UITableViewDataSource
+        tableView.dataSource = self as UITableViewDataSource
 
         retrieveUsers()
         // Do any additional setup after loading the view.

@@ -33,7 +33,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
                                                                     user?.uid
                                                                     
                                                                     self.ref = Database.database().reference()
-                                                                    self.ref.child("users").child((user?.uid)!).setValue([ "profile_photo": self.defaultPhoto, "email": user?.email, "username": usernameField.text!, "fullname": fullnameField.text!])
+                                                                    self.ref.child("users").child((user?.uid)!).setValue([ "profile_photo": self.defaultPhoto, "email": user?.email, "username": usernameField.text!, "fullname": fullnameField.text!, "uid": user?.uid])
                                                                     self.goToFeedVC()
                                                                 }
                                         }

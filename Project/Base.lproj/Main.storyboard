@@ -592,24 +592,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-tg-aVK">
-                                                    <rect key="frame" x="15" y="0.0" width="43" height="43"/>
+                                                    <rect key="frame" x="15" y="-3.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="bdf-eV-uwC"/>
+                                                        <constraint firstAttribute="width" constant="50" id="q9j-g7-5tF"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-a9-1II">
-                                                    <rect key="frame" x="66" y="12" width="42" height="21"/>
+                                                    <rect key="frame" x="73" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="leading" secondItem="czW-wY-G7L" secondAttribute="leading" constant="15" id="0RB-cT-8wZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="CRB-tg-aVK" secondAttribute="bottom" id="4IU-l0-RJc"/>
-                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="top" secondItem="czW-wY-G7L" secondAttribute="top" id="4Pr-hI-eUE"/>
-                                                <constraint firstItem="ee7-a9-1II" firstAttribute="bottom" secondItem="czW-wY-G7L" secondAttribute="bottomMargin" id="5UD-yw-Xa5"/>
-                                                <constraint firstAttribute="trailing" secondItem="CRB-tg-aVK" secondAttribute="trailing" constant="317" id="ILW-Jf-pBb"/>
-                                                <constraint firstItem="ee7-a9-1II" firstAttribute="top" secondItem="czW-wY-G7L" secondAttribute="topMargin" constant="1" id="NOt-ID-p48"/>
-                                                <constraint firstItem="ee7-a9-1II" firstAttribute="leading" secondItem="CRB-tg-aVK" secondAttribute="trailing" constant="8" id="mba-3G-91J"/>
-                                                <constraint firstItem="ee7-a9-1II" firstAttribute="bottom" secondItem="czW-wY-G7L" secondAttribute="bottomMargin" id="uLP-k5-LG4"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="centerY" secondItem="czW-wY-G7L" secondAttribute="centerY" id="PWL-mn-Evm"/>
+                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="centerY" secondItem="czW-wY-G7L" secondAttribute="centerY" id="cYE-Wk-w8q"/>
+                                                <constraint firstItem="CRB-tg-aVK" firstAttribute="leading" secondItem="czW-wY-G7L" secondAttribute="leading" constant="15" id="ljL-do-LcA"/>
+                                                <constraint firstItem="ee7-a9-1II" firstAttribute="leading" secondItem="CRB-tg-aVK" secondAttribute="trailing" constant="8" id="tF7-dO-go0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
