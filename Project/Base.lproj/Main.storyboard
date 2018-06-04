@@ -777,15 +777,22 @@
                                             <segue destination="geb-67-ulU" kind="show" id="NEY-KC-FNt"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zlR-70-VqG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zlR-70-VqG" secondAttribute="trailing" id="6Uh-8R-LWo"/>
                                     <constraint firstAttribute="trailing" secondItem="bc7-7c-sB0" secondAttribute="trailing" constant="16" id="Drm-vf-OLD"/>
                                     <constraint firstItem="aTr-8X-e4N" firstAttribute="top" secondItem="h3l-fW-owg" secondAttribute="bottom" constant="8" symbolic="YES" id="PBP-hO-LsT"/>
                                     <constraint firstItem="h3l-fW-owg" firstAttribute="leading" secondItem="aFT-xW-Hmg" secondAttribute="leadingMargin" id="QJp-Xg-AqZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlR-70-VqG" secondAttribute="bottom" id="Rra-js-Olr"/>
                                     <constraint firstItem="aTr-8X-e4N" firstAttribute="leading" secondItem="aFT-xW-Hmg" secondAttribute="leading" constant="11" id="b4Z-rQ-kch"/>
+                                    <constraint firstItem="zlR-70-VqG" firstAttribute="top" secondItem="aFT-xW-Hmg" secondAttribute="top" id="dWt-ZC-nhn"/>
                                     <constraint firstAttribute="bottom" secondItem="bc7-7c-sB0" secondAttribute="bottom" constant="16" id="dmv-AN-2Y8"/>
                                     <constraint firstItem="fw4-Cj-2P1" firstAttribute="centerX" secondItem="aFT-xW-Hmg" secondAttribute="centerX" id="e4B-d7-c9D"/>
+                                    <constraint firstItem="zlR-70-VqG" firstAttribute="leading" secondItem="aFT-xW-Hmg" secondAttribute="leading" id="egX-Md-cxj"/>
                                     <constraint firstAttribute="bottom" secondItem="fw4-Cj-2P1" secondAttribute="bottom" constant="16" id="oMy-e5-NRg"/>
                                     <constraint firstItem="fw4-Cj-2P1" firstAttribute="top" secondItem="aTr-8X-e4N" secondAttribute="top" id="wLg-f0-t8t"/>
                                 </constraints>
@@ -804,6 +811,7 @@
                     <connections>
                         <outlet property="captureButton" destination="fw4-Cj-2P1" id="faY-uk-yfG"/>
                         <outlet property="capturePreviewView" destination="aFT-xW-Hmg" id="MFE-bt-iCz"/>
+                        <outlet property="imageview" destination="zlR-70-VqG" id="YHW-MC-jNr"/>
                         <outlet property="photoModeButton" destination="h3l-fW-owg" id="bWt-J2-Lsy"/>
                         <outlet property="toggleCameraButton" destination="ZjN-BP-2cU" id="4ja-fZ-eiO"/>
                         <outlet property="toggleFlashButton" destination="nUA-7i-e5Z" id="fzO-Ww-bHv"/>
@@ -812,7 +820,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgl-8O-CW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-1487"/>
+            <point key="canvasLocation" x="685.60000000000002" y="-1487.4062968515743"/>
         </scene>
         <!--Add Video-->
         <scene sceneID="5gF-Cv-B6q">

@@ -220,7 +220,7 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
                 }
 
             }
-            //self.photoCaptureCompletionBlock?(image, nil)
+            self.photoCaptureCompletionBlock?(image, nil)
         }
             
         else {
