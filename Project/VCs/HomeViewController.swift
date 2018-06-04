@@ -14,9 +14,10 @@ class HomeViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
  
-    
-   
+    var followingUsers = [String]()
+    var user = Auth.auth().currentUser!
     var posts = [Post]()
+    let ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self as! UITableViewDataSource
@@ -25,21 +26,42 @@ class HomeViewController: UIViewController{
         
         // Do any additional setup after loading the view.
     }
-    func loadPosts() {
-        Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            
-            if let dict = snapshot.value as? [String: Any] {
-                let photoUrl = dict["photo_url"] as! String
-                let descriptionText = dict["desc"] as! String
-                let username = dict["username"] as! String
-                let likes = dict["likes"] as! Int
-                let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
-                self.posts.append(post)
-                self.tableView.reloadData()
-            }
-        }
-    }
     
+    
+    func loadPosts() {
+       // Database.database().reference().child("users/\(user.uid)").observe(.childAdded) { (snapshot: DataSnapshot) in
+            
+        ref.child("users").child(user.uid).child("following").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
+            
+            if let following = snapshot.value as? [String : AnyObject] {
+                for (_, value) in following {
+                    self.followingUsers.append(value as! String)
+                    self.ref.child("users/\(value)/posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+                        
+                        if let dict = snapshot.value as? [String: Any] {
+                            let photoUrl = dict["photo_url"] as! String
+                            let descriptionText = dict["desc"] as! String
+                            print(".........................")
+                            print(photoUrl)
+                            let username = dict["username"] as! String
+                            let likes = dict["likes"] as! Int
+                            let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
+                            self.posts.append(post)
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                }
+            }
+        })
+            
+        for userid in followingUsers{
+            print(userid)
+ 
+        }
+
+    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

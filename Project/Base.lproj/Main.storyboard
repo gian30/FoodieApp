@@ -450,7 +450,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="ZKN-4r-9W7">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKN-4r-9W7">
                                                     <rect key="frame" x="0.0" y="59" width="375" height="320"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="999" constant="320" id="yTF-n0-HDQ"/>
@@ -889,7 +889,6 @@
         <image name="Search" width="23" height="22"/>
         <image name="Search_Selected" width="23" height="22"/>
         <image name="Video Camera Icon" width="24" height="24"/>
-        <image name="burger" width="300" height="270"/>
         <image name="discover" width="22" height="22"/>
         <image name="like" width="46" height="41"/>
         <image name="photo_profile" width="100" height="100"/>
