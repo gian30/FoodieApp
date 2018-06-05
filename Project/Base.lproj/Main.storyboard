@@ -343,6 +343,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mEc-jd-3MV" id="ddr-Ka-rEG"/>
+                        <outlet property="profilePhoto" destination="FoM-gz-Zgz" id="7Jk-yH-6c2"/>
+                        <outlet property="usernameLabel" destination="FQ9-BP-ViC" id="QHR-tq-aCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1b-9T-2Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     var posts = [Post]()
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var profilePhoto: UIImageView!
+    
+    @IBOutlet weak var usernameLabel: UINavigationItem!
     var user = Auth.auth().currentUser!
     @IBAction func buttonLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
@@ -25,6 +28,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self as! UICollectionViewDataSource
+        //profilePhoto.downloadImage(from: user.photoURL as? String)
+        //print(user.profileImageUrl as? String!)
+        loadUser()
         loadPosts()
         // Do any additional setup after loading the view.
     }
@@ -50,6 +56,21 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                 self.posts.append(post) 
                 self.collectionView.reloadData()
             }
+        }
+    }
+    func loadUser() {
+        
+        
+        Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+          
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            let photoUrl = value?["profile_photo"] as? String ?? ""
+            self.profilePhoto.downloadImage(from: photoUrl)
+            self.usernameLabel.title = username
+            
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
     
