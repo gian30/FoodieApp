@@ -29,6 +29,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var likeimg: UIButton!
     @IBAction func like(_ sender: Any) {
+        
         if (doubleTap) {
             doubleTap = false
             likeimg.setBackgroundImage(UIImage(named: "like") as? UIImage, for: UIControlState.normal)

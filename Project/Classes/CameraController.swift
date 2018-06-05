@@ -213,8 +213,9 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
                 let downloadURL = metadata.downloadURL()?.absoluteString
                 
                 if Auth.auth().currentUser != nil {
+                    let key = self.ref.child("users").childByAutoId().key
                     self.ref = Database.database().reference()
-                    self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0, "isLast": true])
+                    self.ref.child("users/\(self.user.uid)/posts").child("post\(key)").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0, "isLast": true])
                 } else {
                     print("error user not logged")
                 }
