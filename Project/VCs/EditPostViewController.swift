@@ -17,7 +17,9 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
     var user = Auth.auth().currentUser!
     var data: NSData!
     var ref: DatabaseReference!
-    @IBOutlet weak var imageView: UIImageView!
+ 
+    @IBOutlet weak var postingImage: UIImageView!
+    var receivedImage : UIImage?
     
     @IBOutlet weak var descField: UITextField!
     @IBAction func AddPost(_ sender: Any) {
@@ -29,7 +31,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        postingImage.image = receivedImage
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -61,8 +63,8 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
             
             
             
-            imageView.image = image
-            imageView.contentMode = .scaleAspectFill
+            postingImage.image = image
+            postingImage.contentMode = .scaleAspectFill
             
             
         }
