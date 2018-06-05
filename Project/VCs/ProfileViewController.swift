@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var profilePhoto: UIImageView!
 
+    @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var follows: UILabel!
     @IBOutlet weak var usernameLabel: UINavigationItem!
     var user = Auth.auth().currentUser!
@@ -73,8 +74,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             let value = snapshot.value as? NSDictionary
             let username = value?["username"] as? String ?? ""
+            let fullname = value?["fullname"] as? String ?? ""
             let photoUrl = value?["profile_photo"] as? String ?? ""
             self.profilePhoto.downloadImage(from: photoUrl)
+            self.fullnameLabel.text = fullname
             self.usernameLabel.title = username
             
         }) { (error) in

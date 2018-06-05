@@ -316,6 +316,13 @@
                                     <segue destination="aRZ-vf-voQ" kind="show" id="xfG-3e-6iJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-D1-fW3">
+                                <rect key="frame" x="182" y="85" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -341,6 +348,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mEc-jd-3MV" id="ddr-Ka-rEG"/>
+                        <outlet property="fullnameLabel" destination="DCk-D1-fW3" id="tW9-ct-cCV"/>
                         <outlet property="profilePhoto" destination="FoM-gz-Zgz" id="7Jk-yH-6c2"/>
                         <outlet property="usernameLabel" destination="FQ9-BP-ViC" id="QHR-tq-aCb"/>
                     </connections>
