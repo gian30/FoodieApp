@@ -13,11 +13,13 @@ class Post {
     var photo: String?
     var username: String?
     var likes: Int
-    init(descriptionText: String, photoData: String, usernameText: String, likesNum: Int) {
+    var uidUser: String?
+    init(descriptionText: String, photoData: String, usernameText: String, likesNum: Int, uidU: String) {
         description = descriptionText
         photo = photoData
         username = usernameText
         likes = likesNum
+        uidUser = uidU
     }
     
 }

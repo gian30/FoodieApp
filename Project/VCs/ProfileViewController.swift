@@ -58,19 +58,19 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                 let descriptionText = dict["desc"] as! String
                 let username = dict["username"] as! String
                 let likes = dict["likes"] as! Int
-                
+                let uid = dict["uid"] as! String
                 let url = URL(string: (photoUrl))
                 let data = try? Data(contentsOf: url!)
                 
-                let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
+                let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes, uidU : uid)
                 self.posts.append(post) 
                 self.collectionView.reloadData()
             }
         }
     }
     func loadUser() {
- Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-          
+        Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
             let value = snapshot.value as? NSDictionary
             let username = value?["username"] as? String ?? ""
             let photoUrl = value?["profile_photo"] as? String ?? ""

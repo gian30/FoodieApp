@@ -57,7 +57,8 @@ class HomeTableViewCell: UITableViewCell {
         
     }
     
- 
+  
+
     
     var user: User? {
         didSet {

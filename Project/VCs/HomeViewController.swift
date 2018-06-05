@@ -13,7 +13,7 @@ import FirebaseDatabase
 class HomeViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
- 
+    
     var followingUsers = [String]()
     var user = Auth.auth().currentUser!
     var posts = [Post]()
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController{
         refreshControl.endRefreshing()
     }
     func loadPosts() {
-       // Database.database().reference().child("users/\(user.uid)").observe(.childAdded) { (snapshot: DataSnapshot) in
+        // Database.database().reference().child("users/\(user.uid)").observe(.childAdded) { (snapshot: DataSnapshot) in
         
         ref.child("users").child(user.uid).child("following").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
             
@@ -50,11 +50,10 @@ class HomeViewController: UIViewController{
                         if let dict = snapshot.value as? [String: Any] {
                             let photoUrl = dict["photo_url"] as! String
                             let descriptionText = dict["desc"] as! String
-                            print(".........................")
-                            print(photoUrl)
                             let username = dict["username"] as! String
+                            let uid = dict["uid"] as! String
                             let likes = dict["likes"] as! Int
-                            let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes)
+                            let post = Post(descriptionText: descriptionText, photoData: photoUrl, usernameText: username, likesNum: likes, uidU: uid)
                             self.posts.append(post)
                             self.tableView.reloadData()
                         }
@@ -63,9 +62,12 @@ class HomeViewController: UIViewController{
                 }
             }
         })
-
+        
     }
- 
+    
+    
+  
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -80,6 +82,7 @@ class HomeViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    
 }
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,6 +93,14 @@ extension HomeViewController: UITableViewDataSource {
         let post = posts[indexPath.row]
         
         cell.post = post
+        Database.database().reference().child("users").child(post.uidUser!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            let photoUrl = value?["profile_photo"] as? String ?? ""
+            cell.userPhoto.downloadImage(from: photoUrl)
+        })
+        
         cell.imagePost.image = nil
         cell.imagePost?.downloadImage(from: post.photo)
         

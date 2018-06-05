@@ -17,7 +17,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
     var user = Auth.auth().currentUser!
     var data: NSData!
     var ref: DatabaseReference!
- 
+    var username = ""
     @IBOutlet weak var postingImage: UIImageView!
     var receivedImage : UIImage?
     
@@ -32,6 +32,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         postingImage.image = receivedImage
+        loadUser()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -93,10 +94,22 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
             
             self.ref = Database.database().reference()
             
-            self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": self.descField.text, "username":self.user.email, "likes": 0])
+            self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": self.descField.text, "username": self.username, "uid":self.user.uid, "likes": 0])
+    
         }
         tabBarController?.selectedIndex = 0
         
+    }
+    func loadUser() {
+        Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            self.username = value?["username"] as? String ?? ""
+
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     //image compression
