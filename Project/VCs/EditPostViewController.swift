@@ -18,6 +18,11 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate,
     var data: NSData!
     var ref: DatabaseReference!
     var username = ""
+    
+    
+   
+    
+    
     @IBOutlet weak var postingImage: UIImageView!
     var receivedImage : UIImage?
     

@@ -202,25 +202,7 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
             
         else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
             let image = UIImage(data: data) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let postRef = storageRef.child("posts/\(randomString(len: 25)).jpg")
-            let uploadTask = postRef.putData(data as Data, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    return
-                }
-                
-                let downloadURL = metadata.downloadURL()?.absoluteString
-                
-                if Auth.auth().currentUser != nil {
-                   
-                    self.ref = Database.database().reference()
-                    self.ref.child("users/\(self.user.uid)/posts").child("post\(self.randomString(len: 25))").setValue(["photo_url": downloadURL, "desc": "description", "username":self.user.email, "uid":self.user.uid, "likes": 0, "isLast": true])
-                } else {
-                    print("error user not logged")
-                }
-
-            }
+         
             self.photoCaptureCompletionBlock?(image, nil)
         }
             
@@ -228,15 +210,7 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
             self.photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
         }
     }
-    func randomString(len:Int) -> String {
-        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        var c = Array(charSet)
-        var s:String = ""
-        for n in (1...10) {
-            s.append(c[Int(arc4random()) % c.count])
-        }
-        return s
-    }
+
 }
 
 extension CameraController {

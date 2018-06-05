@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="-1196" y="127"/>
         </scene>
-        <!--UserVC-->
+        <!--Edit ProfileVC-->
         <scene sceneID="jqw-ej-ynb">
             <objects>
-                <viewController id="aRZ-vf-voQ" customClass="UserVC" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aRZ-vf-voQ" customClass="EditProfileVC" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tH-ys-u3A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,6 +173,9 @@
                                         <integer key="value" value="75"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="AddProfilePhoto:" destination="aRZ-vf-voQ" eventType="touchUpInside" id="ZCZ-Fo-bZ2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afq-Yx-7a3">
                                 <rect key="frame" x="157" y="259" width="62" height="21"/>
@@ -186,18 +189,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-HG-hrT">
-                                <rect key="frame" x="142" y="412" width="91" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-jq-mpK">
-                                <rect key="frame" x="16" y="450" width="343" height="96"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gij-Po-ukQ">
                                 <rect key="frame" x="16" y="374" width="343" height="30"/>
                                 <constraints>
@@ -214,31 +205,28 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r14-l8-P8G">
-                                <rect key="frame" x="159" y="568" width="56" height="30"/>
+                                <rect key="frame" x="160" y="423" width="56" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NER-vl-qHI"/>
                                 </constraints>
                                 <state key="normal" title="Guardar">
                                     <color key="titleColor" red="0.0058264783579999998" green="0.48076808450000003" blue="0.38637247679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveData:" destination="aRZ-vf-voQ" eventType="touchUpInside" id="dcW-TO-bKU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zvI-yF-Lcy" firstAttribute="trailing" secondItem="1tH-ys-u3A" secondAttribute="trailingMargin" id="0Wu-Y3-CUF"/>
-                            <constraint firstItem="cHH-jq-mpK" firstAttribute="top" secondItem="fGh-HG-hrT" secondAttribute="bottom" constant="17" id="8vj-s0-PoC"/>
-                            <constraint firstItem="cHH-jq-mpK" firstAttribute="centerX" secondItem="r14-l8-P8G" secondAttribute="centerX" id="L2l-nQ-gSW"/>
-                            <constraint firstItem="r14-l8-P8G" firstAttribute="top" secondItem="cHH-jq-mpK" secondAttribute="bottom" constant="22" id="Nhp-21-qZE"/>
-                            <constraint firstAttribute="bottom" secondItem="r14-l8-P8G" secondAttribute="bottom" constant="20" symbolic="YES" id="VQb-iU-aV5"/>
-                            <constraint firstItem="fGh-HG-hrT" firstAttribute="top" secondItem="Gij-Po-ukQ" secondAttribute="bottom" constant="8" symbolic="YES" id="arq-dk-C9G"/>
+                            <constraint firstAttribute="bottom" secondItem="r14-l8-P8G" secondAttribute="bottom" constant="165" id="VQb-iU-aV5"/>
                             <constraint firstItem="Gij-Po-ukQ" firstAttribute="top" secondItem="gTs-6z-WTh" secondAttribute="bottom" constant="16" id="bhS-Wp-Ixx"/>
                             <constraint firstItem="zvI-yF-Lcy" firstAttribute="centerY" secondItem="1tH-ys-u3A" secondAttribute="centerY" id="bwu-Dn-N78"/>
                             <constraint firstItem="Afq-Yx-7a3" firstAttribute="top" secondItem="Lhj-Zl-svT" secondAttribute="top" constant="195" id="fi3-fe-ebH"/>
                             <constraint firstItem="wU4-q2-oxx" firstAttribute="centerX" secondItem="Afq-Yx-7a3" secondAttribute="centerX" id="h8Z-VY-Eed"/>
-                            <constraint firstItem="Gij-Po-ukQ" firstAttribute="trailing" secondItem="cHH-jq-mpK" secondAttribute="trailing" id="i0m-lX-fiH"/>
+                            <constraint firstItem="r14-l8-P8G" firstAttribute="centerX" secondItem="Gij-Po-ukQ" secondAttribute="centerX" id="iFh-v4-uTU"/>
                             <constraint firstItem="zvI-yF-Lcy" firstAttribute="trailing" secondItem="Gij-Po-ukQ" secondAttribute="trailing" id="kJw-0T-C8R"/>
-                            <constraint firstItem="Gij-Po-ukQ" firstAttribute="centerX" secondItem="fGh-HG-hrT" secondAttribute="centerX" id="lGA-DL-pcR"/>
-                            <constraint firstItem="Gij-Po-ukQ" firstAttribute="leading" secondItem="cHH-jq-mpK" secondAttribute="leading" id="lkG-OU-tsd"/>
                             <constraint firstItem="zvI-yF-Lcy" firstAttribute="leading" secondItem="Gij-Po-ukQ" secondAttribute="leading" id="mp3-1T-D8M"/>
                             <constraint firstItem="gTs-6z-WTh" firstAttribute="top" secondItem="zvI-yF-Lcy" secondAttribute="bottom" constant="13" id="nh6-bW-kza"/>
                             <constraint firstItem="zvI-yF-Lcy" firstAttribute="centerX" secondItem="gTs-6z-WTh" secondAttribute="centerX" id="rWM-hp-K7q"/>
@@ -248,6 +236,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lhj-Zl-svT"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLAbel" destination="zvI-yF-Lcy" id="pjh-wu-SUw"/>
+                        <outlet property="usernameLabel" destination="Gij-Po-ukQ" id="NNe-hM-bfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gC6-0w-YOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -860,7 +852,6 @@
                         <outlet property="toggleCameraButton" destination="ZjN-BP-2cU" id="4ja-fZ-eiO"/>
                         <outlet property="toggleFlashButton" destination="nUA-7i-e5Z" id="fzO-Ww-bHv"/>
                         <outlet property="videoModeButton" destination="aTr-8X-e4N" id="f51-YU-WAk"/>
-                        <segue destination="geb-67-ulU" kind="show" identifier="toEditPhoto" id="AZX-ml-4tF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgl-8O-CW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -947,7 +938,4 @@
         <image name="photo_profile" width="100" height="100"/>
         <image name="upload" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AZX-ml-4tF"/>
-    </inferredMetricsTieBreakers>
 </document>

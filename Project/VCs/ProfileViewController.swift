@@ -25,10 +25,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         self.show(vc!, sender: self)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         loadUser()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadPosts()
         collectionView.dataSource = self as! UICollectionViewDataSource
         //profilePhoto.downloadImage(from: user.photoURL as? String)
         //print(user.profileImageUrl as? String!)
@@ -41,8 +47,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
         
-        loadUser()
-        loadPosts()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -98,21 +103,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
-
     
-
-    
- 
-  
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
