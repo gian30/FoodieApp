@@ -15,7 +15,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var profilePhoto: UIImageView!
-    
+
+    @IBOutlet weak var follows: UILabel!
     @IBOutlet weak var usernameLabel: UINavigationItem!
     var user = Auth.auth().currentUser!
     @IBAction func buttonLogOut(_ sender: Any) {
@@ -30,6 +31,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.dataSource = self as! UICollectionViewDataSource
         //profilePhoto.downloadImage(from: user.photoURL as? String)
         //print(user.profileImageUrl as? String!)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: width / 3, height: width / 3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
+        
         loadUser()
         loadPosts()
         // Do any additional setup after loading the view.
@@ -59,9 +69,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     func loadUser() {
-        
-        
-        Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+ Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
           
             let value = snapshot.value as? NSDictionary
             let username = value?["username"] as? String ?? ""
@@ -77,16 +85,22 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostThumbImageCell", for: indexPath) as! PostThumbImageCell
         let post = posts[indexPath.row]
         
         cell.thumbImageView.downloadImage(from: post.photo)
-        
+
         
         return cell
     }
+
+    
+
+    
+ 
+  
     /*
      // MARK: - Navigation
      
@@ -98,7 +112,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
      */
     
 }
-
 
 
 
