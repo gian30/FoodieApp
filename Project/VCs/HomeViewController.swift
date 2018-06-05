@@ -21,16 +21,25 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self as! UITableViewDataSource
+        self.tableView.addSubview(self.refreshControl)
         loadPosts()
-        
         
         // Do any additional setup after loading the view.
     }
-    
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        posts.removeAll()
+        self.tableView.reloadData()
+        loadPosts()
+        refreshControl.endRefreshing()
+    }
     func loadPosts() {
        // Database.database().reference().child("users/\(user.uid)").observe(.childAdded) { (snapshot: DataSnapshot) in
-            
+        
         ref.child("users").child(user.uid).child("following").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
             
             if let following = snapshot.value as? [String : AnyObject] {
@@ -54,15 +63,18 @@ class HomeViewController: UIViewController{
                 }
             }
         })
-            
-        for userid in followingUsers{
-            print(userid)
- 
-        }
 
     }
  
-
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(HomeViewController.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.green
+        
+        return refreshControl
+    }()
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
