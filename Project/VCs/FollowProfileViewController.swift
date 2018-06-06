@@ -63,6 +63,11 @@ class FollowProfileViewController: UIViewController , UITableViewDelegate, UITab
         
         cell.nameLabel.text = self.user[indexPath.row].fullName
         cell.userID = self.user[indexPath.row].id
+        cell.userImage.layer.borderWidth = 1
+        cell.userImage.layer.masksToBounds = false
+        cell.userImage.layer.borderColor = UIColor.black.cgColor
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.height/2
+        cell.userImage.clipsToBounds = true
         cell.userImage.downloadImage(from: self.user[indexPath.row].profileImageUrl)
         checkFollowing(indexPath: indexPath)
         
