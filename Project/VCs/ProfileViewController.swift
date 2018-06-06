@@ -33,7 +33,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        profilePhoto.layer.borderWidth = 1
+        profilePhoto.layer.masksToBounds = false
+        profilePhoto.layer.borderColor = UIColor.black.cgColor
+        profilePhoto.layer.cornerRadius = profilePhoto.frame.height/2
+        profilePhoto.clipsToBounds = true
         loadPosts()
         collectionView.dataSource = self as! UICollectionViewDataSource
         //profilePhoto.downloadImage(from: user.photoURL as? String)
