@@ -22,8 +22,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     var user = Auth.auth().currentUser!
     @IBAction func buttonLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
-        self.show(vc!, sender: self)
+   
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+        self.present(signInVC, animated: true, completion: nil)
+        
+        
+       
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
