@@ -871,8 +871,8 @@
                                             <action selector="toEdit:" destination="ws7-We-TNF" eventType="touchUpInside" id="6u7-4S-Fev"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-EJ-rHG">
-                                        <rect key="frame" x="12" y="60" width="350" height="90"/>
+                                    <textField opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-EJ-rHG">
+                                        <rect key="frame" x="12" y="61" width="350" height="90"/>
                                         <color key="backgroundColor" red="0.99993699790000001" green="1" blue="0.99987250569999997" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="FsW-wc-xsu"/>
@@ -881,6 +881,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0DN-k3-MSd">
+                                        <rect key="frame" x="15" y="61" width="350" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -921,6 +925,7 @@
                         <outlet property="capturePreviewView" destination="aFT-xW-Hmg" id="MFE-bt-iCz"/>
                         <outlet property="descOutlet" destination="N8c-EJ-rHG" id="8Fl-k2-8U6"/>
                         <outlet property="imageview" destination="hUT-O2-ZhB" id="HzE-u5-mHd"/>
+                        <outlet property="scrollView" destination="0DN-k3-MSd" id="cUb-Zi-ykY"/>
                         <outlet property="toEditOutlet" destination="Af8-mK-x3u" id="aBg-E7-Ve5"/>
                         <outlet property="toggleCameraButton" destination="ZjN-BP-2cU" id="4ja-fZ-eiO"/>
                         <outlet property="toggleFlashButton" destination="nUA-7i-e5Z" id="fzO-Ww-bHv"/>
